@@ -149,17 +149,22 @@
       }
 
       .category label {
+        width: 100%;
+        /* Match the width of the card */
         height: 25%;
-        /* 25% of the card's height */
-        font-size: 1rem;
-        /* Keep the text readable */
-        padding: 10px;
-        /* Add padding for text separation */
+        /* Take up the remaining 25% of the card */
         text-align: center;
-        /* Center the text */
-        background-color: #f9f9f9;
-        /* Background for text readability */
+        /* Center-align text */
+        display: flex;
+        /* Flexbox for vertical centering */
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        /* Optional padding for readability */
+        font-size: 1rem;
+        /* Adjust for mobile readability */
       }
+
     }
   </style>
 </head>
