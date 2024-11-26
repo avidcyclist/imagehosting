@@ -136,38 +136,34 @@
       font-weight: bold;
     }
 
-    /* Mobile Styles */
     @media (max-width: 600px) {
       .category {
-        height: 150px;
-        /* Slightly taller cards for mobile */
+        height: auto;
+        /* Allow card height to adjust naturally */
         display: flex;
         flex-direction: column;
-        align-items: center;
-        /* Center content horizontally */
+        justify-content: space-between;
+        /* Ensure image and label are spaced */
       }
 
       .category img {
-        height: 80%;
-        /* Take up 80% of the card height */
-        width: auto;
-        /* Maintain proportions */
+        flex: 3;
+        /* Allow the image to take up more space (3/4) */
+        max-width: 100%;
+        height: auto;
         object-fit: contain;
-        /* Ensure the image doesn't crop */
-        margin-bottom: 10px;
-        /* Add spacing below the image */
+        /* Keep the image proportional */
+        margin: 0;
+        /* Remove default margins */
       }
 
       .category label {
-        height: auto;
-        /* Allow label height to adjust dynamically */
+        flex: 1;
+        /* Allocate 1/4 of the space to the label */
         padding: 10px;
-        /* Maintain padding for readability */
         font-size: 1rem;
-        /* Readable text size */
+        /* Keep label readable */
         text-align: center;
-        flex-grow: 0;
-        /* Prevent text from stretching */
       }
     }
   </style>
