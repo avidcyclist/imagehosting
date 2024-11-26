@@ -132,23 +132,31 @@
     @media (max-width: 600px) {
       .categories {
         grid-template-columns: 1fr;
+        /* Single-column layout for mobile */
         gap: 15px;
       }
 
+      .category {
+        height: auto;
+        /* Let the height adjust dynamically */
+      }
+
       .category img {
-        height: 100px;
+        height: 75%;
+        /* Let the image take 75% of the card */
+        max-height: 200px;
+        /* Limit the maximum image height */
+        object-fit: cover;
+        /* Fill the space without distortion */
       }
 
       .category label {
-        font-size: 14px;
-      }
-
-      .total {
-        font-size: 18px;
-      }
-
-      .discount {
-        font-size: 16px;
+        height: 25%;
+        /* Text takes up the remaining 25% */
+        font-size: 1rem;
+        /* Use a relative size for better scaling */
+        padding: 5px;
+        /* Adjust padding for readability */
       }
     }
   </style>
