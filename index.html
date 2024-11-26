@@ -131,39 +131,46 @@
 
     @media (max-width: 600px) {
       .category {
-        height: 300px;
-        /* Set a fixed card height */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        /* Stack items vertically */
+        height: 300px;
+        /* Fixed height for consistency */
       }
 
       .category img {
-        height: 75%;
-        /* 75% of the card's height */
-        object-fit: contain;
-        /* Ensures the image fills the space proportionally */
-        display: block;
         width: 100%;
-        /* Ensures the image spans the full width of the card */
+        /* Full width of the card */
+        height: 75%;
+        /* Take 75% of the card height */
+        object-fit: contain;
+        /* Ensure the image scales proportionally */
+        margin: 0;
+        /* Remove any potential margins */
       }
 
       .category label {
         width: 100%;
-        /* Match the width of the card */
+        /* Full width of the card */
         height: 25%;
-        /* Take up the remaining 25% of the card */
-        text-align: center;
-        /* Center-align text */
+        /* Remaining 25% of the card height */
         display: flex;
-        /* Flexbox for vertical centering */
+        /* Flexbox for centering */
         justify-content: center;
+        /* Horizontally center text */
         align-items: center;
-        padding: 5px;
-        /* Optional padding for readability */
+        /* Vertically center text */
         font-size: 1rem;
-        /* Adjust for mobile readability */
+        /* Readable font size */
+        padding: 10px;
+        /* Add spacing around the text */
+        text-align: center;
+        /* Center the text */
+        background-color: #f9f9f9;
+        /* Keep text background consistent */
       }
+    }
+
 
     }
   </style>
