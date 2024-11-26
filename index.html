@@ -144,6 +144,7 @@
         /* Ensure flexbox behavior */
         flex-direction: column;
         /* Stack image and label vertically */
+        align-items: stretch;
       }
 
       .category img {
@@ -154,17 +155,28 @@
         margin: 0 auto;
         /* Center the image */
         object-fit: contain;
+        flex-shrink: 0;
       }
 
       .category label {
-        height: 25%;
-        /* Let label height adjust dynamically */
+        height: 30%;
+        /* Text fills the remaining 30% of the card */
         padding: 10px;
-        /* Maintain padding for readability */
+        /* Add spacing around the text */
         font-size: 1rem;
-        /* Ensure readable text size */
+        /* Maintain readable font size */
+        display: flex;
+        /* Use flexbox for centering */
+        justify-content: center;
+        /* Center-align the text horizontally */
+        align-items: center;
+        /* Center-align the text vertically */
         text-align: center;
+        /* Ensure multiline text stays centered */
         background-color: #f9f9f9;
+        /* Optional background for clarity */
+        flex-shrink: 0;
+        /* Prevent the label from shrinking */
       }
     }
   </style>
