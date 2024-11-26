@@ -131,37 +131,34 @@
 
     @media (max-width: 600px) {
       .category {
-        aspect-ratio: 5 / 4;
-        /* Set card ratio to 5:4 */
+        height: 300px;
+        /* Set a fixed card height */
         display: flex;
         flex-direction: column;
-        /* Stack the image and label */
+        justify-content: space-between;
       }
 
       .category img {
-        flex: 3;
-        /* Image takes up 75% of the height */
-        width: 100%;
-        /* Image fills the card width */
-        object-fit: contain;
-        /* Maintain proportions without distortion */
+        height: 75%;
+        /* 75% of the card's height */
+        object-fit: cover;
+        /* Ensures the image fills the space proportionally */
         display: block;
+        width: 100%;
+        /* Ensures the image spans the full width of the card */
       }
 
       .category label {
-        flex: 1;
-        /* Label takes up 25% of the height */
+        height: 25%;
+        /* 25% of the card's height */
         font-size: 1rem;
-        /* Maintain readable font size */
+        /* Keep the text readable */
         padding: 10px;
-        display: flex;
-        /* Center-align text */
-        align-items: center;
-        justify-content: center;
+        /* Add padding for text separation */
+        text-align: center;
+        /* Center the text */
         background-color: #f9f9f9;
-        /* Add consistent label background */
-        border-top: 1px solid #ddd;
-        /* Visual separation line */
+        /* Background for text readability */
       }
     }
   </style>
