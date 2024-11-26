@@ -130,33 +130,25 @@
     }
 
     @media (max-width: 600px) {
-      .categories {
-        grid-template-columns: 1fr;
-        /* Single-column layout for mobile */
-        gap: 15px;
-      }
-
       .category {
         height: auto;
-        /* Let the height adjust dynamically */
+        /* Let the card adjust dynamically */
       }
 
       .category img {
-        width: 100%;
-        height: 75%;
+        height: 60%;
+        /* Increase the image height to take up more space */
         object-fit: contain;
-        display: block;
-        background-color: #f0f0f0;
+        /* Keep the image proportional */
       }
 
       .category label {
+        height: 40%;
+        /* The remaining space for text */
+        font-size: 1rem;
+        /* Adjust font size for readability */
         padding: 10px;
-        font-size: 16px;
-        font-weight: 300;
-        color: #333;
-        text-align: center;
-        background-color: #f9f9f9;
-        border-top: 1px solid #ddd;
+        /* Ensure padding stays balanced */
       }
     }
   </style>
