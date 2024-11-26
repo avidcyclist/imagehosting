@@ -69,13 +69,7 @@
       text-align: center;
       background-color: #f9f9f9;
       border-top: 1px solid #ddd;
-      height: 25%; /* Ensures the label takes up the remaining 25% of the card */
-      display: flex; /* Flexbox for centering text */
-      align-items: center;
-      justify-content: center;
-      overflow: hidden; /* Ensures long text doesn't overflow */
-      text-overflow: ellipsis; /* Handles long text gracefully */
-      white-space: nowrap; /* Prevents text wrapping */
+
     }
 
     .category:hover {
@@ -135,6 +129,25 @@
       font-weight: bold;
     }
 
+    /* Media Query for Mobile */
+    @media (max-width: 600px) {
+      .category {
+        height: 250px;
+        /* Slightly shorter cards for mobile */
+      }
+
+      .category img {
+        height: 75%;
+        /* Maintain 75% of card height */
+      }
+
+      .category label {
+        height: 25%;
+        /* Keep label at 25% of card */
+        font-size: 0.9rem;
+        /* Slightly smaller font for smaller screens */
+      }
+    }
   </style>
 </head>
 
