@@ -60,7 +60,7 @@
       /* Automatically scale height based on width */
       max-height: 75%;
       /* Constrain to 75% of card height */
-      object-fit: cover;
+      object-fit: contain;
       /* Fill the container while cropping excess */
       display: block;
       /* Prevent inline spacing issues */
@@ -138,45 +138,28 @@
 
     @media (max-width: 600px) {
       .category {
-        height: 400px;
-        /* Let the card adjust its height naturally */
-        display: flex;
-        /* Ensure flexbox behavior */
-        flex-direction: column;
-        /* Stack image and label vertically */
-        align-items: stretch;
+        height: 500px;
+
       }
 
       .category img {
         max-height: 75%;
         /* Allow image to shrink proportionally */
-        width: 100%;
+        width: auto;
         /* Prevent forced width scaling */
         margin: 0 auto;
-        /* Center the image */
+
         object-fit: contain;
-        flex-shrink: 0;
+        /* Center the image */
       }
 
       .category label {
         height: 30%;
-        /* Text fills the remaining 30% of the card */
-        padding: 10px;
-        /* Add spacing around the text */
+        /* Take up the remaining 30% */
         font-size: 1rem;
-        /* Maintain readable font size */
         display: flex;
-        /* Use flexbox for centering */
         justify-content: center;
-        /* Center-align the text horizontally */
         align-items: center;
-        /* Center-align the text vertically */
-        text-align: center;
-        /* Ensure multiline text stays centered */
-        background-color: #f9f9f9;
-        /* Optional background for clarity */
-        flex-shrink: 0;
-        /* Prevent the label from shrinking */
       }
     }
   </style>
