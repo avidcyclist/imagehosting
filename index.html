@@ -459,6 +459,7 @@
     const scrollUpButton = document.getElementById('scroll-up');
     const scrollDownButton = document.getElementById('scroll-down');
 
+    // Arrow click functionality
     scrollUpButton.addEventListener('click', () => {
       window.scrollBy({ top: -200, behavior: 'smooth' }); // Scrolls the entire frame upward
     });
@@ -467,6 +468,32 @@
       window.scrollBy({ top: 200, behavior: 'smooth' }); // Scrolls the entire frame downward
     });
 
+    // Hide/show arrows based on scroll position
+    function toggleArrows() {
+      const scrollTop = window.scrollY; // Current scroll position
+      const scrollHeight = document.documentElement.scrollHeight; // Total height of content
+      const clientHeight = document.documentElement.clientHeight; // Visible height of the window
+
+      // Hide up arrow if at the top of the page
+      if (scrollTop === 0) {
+        scrollUpButton.style.display = 'none';
+      } else {
+        scrollUpButton.style.display = 'flex';
+      }
+
+      // Hide down arrow if at the bottom of the page
+      if (scrollTop + clientHeight >= scrollHeight) {
+        scrollDownButton.style.display = 'none';
+      } else {
+        scrollDownButton.style.display = 'flex';
+      }
+    }
+
+    // Attach scroll event to dynamically hide/show arrows
+    window.addEventListener('scroll', toggleArrows);
+
+    // Initial state
+    toggleArrows();
   </script>
 </body>
 
