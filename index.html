@@ -118,15 +118,6 @@
       /* Slight transparency for better visibility */
     }
 
-    .total {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      padding-bottom: 40px;
-      /* Add padding for arrow space */
-    }
-
     .summary {
       margin-top: 30px;
       padding: 20px;
@@ -137,19 +128,6 @@
     .summary h2 {
       text-align: center;
       margin-bottom: 20px;
-    }
-
-    .total {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .discount {
-      text-align: center;
-      color: green;
-      font-weight: bold;
     }
 
     /* Scroll Arrows for Mobile */
@@ -179,8 +157,27 @@
       top: 10px;
     }
 
+    .total {
+      margin-top: 10px;
+      /* Minimal margin above the total */
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .discount {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin: 0;
+      /* Remove margin */
+      padding: 0;
+      /* Remove padding */
+    }
+
     .scroll-arrow.bottom {
-      bottom: 40px;
+      bottom: 10px;
+      /* Position above the total and discount sections */
     }
 
     .scroll-arrow svg {
