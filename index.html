@@ -470,18 +470,19 @@
 
     // Hide/show arrows based on scroll position
     function toggleArrows() {
-      const scrollTop = window.scrollY; // Current scroll position
-      const scrollHeight = document.documentElement.scrollHeight; // Total height of content
-      const clientHeight = document.documentElement.clientHeight; // Visible height of the window
+      const iframeDocument = document.documentElement; // Use iframe's document
+      const scrollTop = iframeDocument.scrollTop; // Current scroll position within iframe
+      const scrollHeight = iframeDocument.scrollHeight; // Total height of iframe content
+      const clientHeight = iframeDocument.clientHeight; // Visible height of the iframe viewport
 
-      // Hide up arrow if at the top of the page
+      // Hide up arrow if at the top of the iframe content
       if (scrollTop === 0) {
         scrollUpButton.style.display = 'none';
       } else {
         scrollUpButton.style.display = 'flex';
       }
 
-      // Hide down arrow if at the bottom of the page
+      // Hide down arrow if at the bottom of the iframe content
       if (scrollTop + clientHeight >= scrollHeight) {
         scrollDownButton.style.display = 'none';
       } else {
@@ -489,11 +490,12 @@
       }
     }
 
-    // Attach scroll event to dynamically hide/show arrows
-    window.addEventListener('scroll', toggleArrows);
+    // Attach the scroll event listener to the iframe's document
+    document.addEventListener('scroll', toggleArrows);
 
     // Initial state
     toggleArrows();
+
   </script>
 </body>
 
