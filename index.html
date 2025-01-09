@@ -224,9 +224,9 @@
   <div class="container">
     <h1>Dynamic Pricing Calculator</h1>
     <p>Select programs to see your total and savings:</p>
-
-    <div class="categories" id="categories">
-      <!-- Membership Options -->
+    <!-- Membership Options -->
+    <h2>Membership Options</h2>
+    <div class="categories" id="membership-categories">
       <div class="category">
         <input type="checkbox" id="pif-membership" data-price="660">
         <label for="pif-membership">
@@ -236,7 +236,6 @@
           PIF Membership - $660 (One-Time Payment)
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="membership" data-price="60">
         <label for="membership">
@@ -246,8 +245,11 @@
           Membership - $60 Month 12 Month Membership
         </label>
       </div>
+    </div>
 
-      <!-- Strength Options -->
+    <!-- Strength Options -->
+    <h2>Strength Options</h2>
+    <div class="categories" id="strength-categories">
       <div class="category">
         <input type="checkbox" id="strength" data-price="275" data-membership-discount="50">
         <label for="strength">
@@ -257,7 +259,6 @@
           Unlimited HS Strength and Agility - $275
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="jrhs-strength" data-price="180" data-membership-discount="50">
         <label for="jrhs-strength">
@@ -267,8 +268,11 @@
           JRHS Strength and Agility - $180
         </label>
       </div>
+    </div>
 
-      <!-- Lesson Levels -->
+    <!-- Lesson Levels -->
+    <h2>Lesson Levels</h2>
+    <div class="categories" id="lesson-categories">
       <div class="category">
         <input type="checkbox" id="lessons-level1" data-price="160" data-membership-discount="40">
         <label for="lessons-level1">
@@ -278,7 +282,6 @@
           Level 1 Lessons 4 Pack - $160
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="lessons-level2" data-price="180" data-membership-discount="40">
         <label for="lessons-level2">
@@ -288,7 +291,6 @@
           Level 2 Lessons 4 Pack - $180
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="lessons-level3" data-price="200" data-membership-discount="40">
         <label for="lessons-level3">
@@ -298,8 +300,11 @@
           Level 3 Lessons 4 Pack - $200
         </label>
       </div>
+    </div>
 
-      <!-- Arm Care -->
+    <!-- Arm Care -->
+    <h2>Arm Care</h2>
+    <div class="categories" id="armcare-categories">
       <div class="category">
         <input type="checkbox" id="armcare" data-price="900" data-membership-discount="100">
         <label for="armcare">
@@ -309,7 +314,6 @@
           HS Arm Care - $900
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="jrhs-armcare" data-price="800" data-membership-discount="100">
         <label for="jrhs-armcare">
@@ -319,7 +323,6 @@
           JRHS Arm Care - $800
         </label>
       </div>
-
       <div class="category">
         <input type="checkbox" id="youth-armcare" data-price="700" data-membership-discount="100">
         <label for="youth-armcare">
