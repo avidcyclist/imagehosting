@@ -27,10 +27,6 @@
       margin-bottom: 20px;
     }
 
-    h2 {
-      text-align: center;
-    }
-
     p {
       text-align: center;
       color: #555;
@@ -132,6 +128,10 @@
     .summary h2 {
       text-align: center;
       margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
     }
 
     /* Scroll Arrows for Mobile */
@@ -249,6 +249,24 @@
           Membership - $60 Month 12 Month Membership
         </label>
       </div>
+      <div class="category">
+        <input type="checkbox" id="six-month-membership" data-price="80">
+        <label for="six-month-membership">
+          <img
+            src="https://raw.githubusercontent.com/avidcyclist/imagehosting/refs/heads/main/college%20winter%20break%20membership%20flyer.png"
+            alt="6 Month Membership">
+          Membership - $80 Month 6 Month Membership
+        </label>
+      </div>
+      <div class="category">
+        <input type="checkbox" id="three-month-membership" data-price="100">
+        <label for="three-month-membership">
+          <img
+            src="https://raw.githubusercontent.com/avidcyclist/imagehosting/refs/heads/main/college%20winter%20break%20membership%20flyer.png"
+            alt="3 Month Membership">
+          Membership - $100 Month 3 Month Membership
+        </label>
+      </div>
     </div>
 
     <!-- Strength Options -->
@@ -304,6 +322,15 @@
           Level 3 Lessons 4 Pack - $200
         </label>
       </div>
+      <div class="category">
+        <input type="checkbox" id="lessons-level4" data-price="220" data-membership-discount="40">
+        <label for="lessons-level4">
+          <img
+            src="https://raw.githubusercontent.com/avidcyclist/imagehosting/refs/heads/main/college%20winter%20break%20membership%20flyer.png"
+            alt="Level 4 Lessons">
+          Level 4 Lessons 4 Pack - $220
+        </label>
+      </div>
     </div>
 
     <!-- Arm Care -->
@@ -343,17 +370,21 @@
       <ul>
         <li id="summary-pif-membership" style="display: none;">PIF Membership - $<span class="price">0.00</span></li>
         <li id="summary-membership" style="display: none;">Membership - $<span class="price">0.00</span></li>
+        <li id="summary-six-month-membership" style="display: none;">6 Month Membership - $<span
+            class="price">0.00</span></li>
+        <li id="summary-three-month-membership" style="display: none;">3 Month Membership - $<span
+            class="price">0.00</span></li>
         <li id="summary-strength" style="display: none;">Unlimited HS Strength and Agility - $<span
             class="price">0.00</span></li>
         <li id="summary-jrhs-strength" style="display: none;">JRHS Strength and Agility - $<span
-            class="price">0.00</span>
-        </li>
+            class="price">0.00</span></li>
         <li id="summary-lessons-level1" style="display: none;">Level 1 Lessons 4 Pack - $<span class="price">0.00</span>
         </li>
         <li id="summary-lessons-level2" style="display: none;">Level 2 Lessons 4 Pack - $<span class="price">0.00</span>
         </li>
         <li id="summary-lessons-level3" style="display: none;">Level 3 Lessons 4 Pack - $<span class="price">0.00</span>
         </li>
+        <li id="summary-lessons-level4" style="display: none;">Level 4 Lessons 4 Pack - $<span class="price">0.00</span>
         <li id="summary-armcare" style="display: none;">HS Arm Care - $<span class="price">0.00</span></li>
         <li id="summary-jrhs-armcare" style="display: none;">JRHS Arm Care - $<span class="price">0.00</span></li>
         <li id="summary-youth-armcare" style="display: none;">Youth Arm Care - $<span class="price">0.00</span></li>
@@ -378,18 +409,21 @@
   </div>
 
   <script>
-    const checkboxes = document.querySelectorAll('#categories input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.categories input[type="checkbox"]');
     const totalElement = document.getElementById('total');
     const discountElement = document.querySelector('.discount');
 
     const summaryItems = {
       "pif-membership": document.getElementById("summary-pif-membership"),
       membership: document.getElementById("summary-membership"),
+      "six-month-membership": document.getElementById("summary-six-month-membership"),
+      "three-month-membership": document.getElementById("summary-three-month-membership"),
       strength: document.getElementById("summary-strength"),
       "jrhs-strength": document.getElementById("summary-jrhs-strength"),
       "lessons-level1": document.getElementById("summary-lessons-level1"),
       "lessons-level2": document.getElementById("summary-lessons-level2"),
       "lessons-level3": document.getElementById("summary-lessons-level3"),
+      "lessons-level4": document.getElementById("summary-lessons-level4"),
       armcare: document.getElementById("summary-armcare"),
       "jrhs-armcare": document.getElementById("summary-jrhs-armcare"),
       "youth-armcare": document.getElementById("summary-youth-armcare"),
@@ -401,7 +435,9 @@
 
       const membershipCheckbox = document.getElementById("membership");
       const pifMembershipCheckbox = document.getElementById("pif-membership");
-      const membershipActive = membershipCheckbox.checked || pifMembershipCheckbox.checked;
+      const sixMonthMembershipCheckbox = document.getElementById("six-month-membership");
+      const threeMonthMembershipCheckbox = document.getElementById("three-month-membership");
+      const membershipActive = membershipCheckbox.checked || pifMembershipCheckbox.checked || sixMonthMembershipCheckbox.checked || threeMonthMembershipCheckbox.checked;
 
       const strengthCheckbox = document.getElementById("strength");
       const jrhsStrengthCheckbox = document.getElementById("jrhs-strength");
@@ -415,6 +451,8 @@
         let discount = 0;
 
         if (checkbox.checked) {
+          console.log(`Checkbox ${id} is checked`);
+
           // Discounts for Lessons
           if (id.startsWith("lessons") && membershipActive) {
             discount = parseFloat(checkbox.getAttribute("data-membership-discount")) || 0;
