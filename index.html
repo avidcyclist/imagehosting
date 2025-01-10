@@ -55,17 +55,13 @@
 
     .category img {
       width: 100%;
-      /* Full width of the card */
       height: auto;
-      /* Automatically scale height based on width */
       max-height: 75%;
-      /* Constrain to 75% of card height */
       object-fit: contain;
-      /* Fill the container while cropping excess */
       display: block;
-      /* Prevent inline spacing issues */
       background-color: #f0f0f0;
-      /* Fallback background */
+      flex-shrink: 0;
+      /* Prevent the image from shrinking */
     }
 
     .category label {
@@ -76,7 +72,11 @@
       text-align: center;
       background-color: #f9f9f9;
       border-top: 1px solid #ddd;
-
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .category:hover {
@@ -272,6 +272,10 @@
     <!-- Strength Options -->
     <h2>Strength Options</h2>
     <div class="categories" id="strength-categories">
+
+      <!-- Placeholder category to ensure 4 categories per row -->
+      <div class="category placeholder"></div>
+
       <div class="category">
         <input type="checkbox" id="strength" data-price="275" data-membership-discount="50">
         <label for="strength">
@@ -290,6 +294,8 @@
           JRHS Strength and Agility - $180
         </label>
       </div>
+      <!-- Placeholder category to ensure 4 categories per row -->
+      <div class="category placeholder"></div>
     </div>
 
     <!-- Lesson Levels -->
@@ -362,7 +368,9 @@
             alt="Youth Arm Care">
           Youth Arm Care - $700
         </label>
+        <!-- Placeholder category to ensure 4 categories per row -->
       </div>
+      <div class="category placeholder"></div>
     </div>
 
     <div class="summary" id="summary">
